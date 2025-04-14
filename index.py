@@ -35,5 +35,4 @@ def predict():
         prediction = model.predict(scaled_values)[0]
 
     return render_template('form.html', features=features, prediction=prediction, input_data=input_data)
-if __name__ == '__main__':
-    app.run(debug=True)
+
