@@ -4,23 +4,23 @@
     <title>AI Impact Prediction</title>
 </head>
 <body>
-    <h1>AI Impact Prediction Form</h1>
-    <form method="POST" action="/predict">
+    <h1><b>AI Impact Prediction Form</b></h1>
+    <form method="POST">
         {% for feature in features %}
-            <label for="{{ feature }}">{{ feature }}:</label>
-            <input type="text" name="{{ feature }}" required><br><br>
+            <label>{{ feature }}:</label>
+            <input type="text" name="{{ feature }}"><br><br>
         {% endfor %}
         <input type="submit" value="Predict">
     </form>
 
     {% if prediction is defined %}
         <h2>Prediction Result:</h2>
-        <p>Predicted Value: {{ prediction }}</p>
+        <p><b>Predicted Value:</b> {{ prediction }}</p>
 
         <h3>Input Summary:</h3>
         <ul>
         {% for feature, value in input_data.items() %}
-            <li><strong>{{ feature }}:</strong> {{ value }}</li>
+            <li><b>{{ feature }}</b>: {{ value }}</li>
         {% endfor %}
         </ul>
     {% endif %}
